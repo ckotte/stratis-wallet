@@ -6,13 +6,11 @@ Dockerfile for Stratis Interim Wallet (stratisX) [[Source](https://github.com/st
 
 ## Setup
 
-Steps:
-
-1. Build the Docker image
+**1. Build the Docker image
 2. Copy wallet and existing data
 3. Create stratis.conf
 4. Run the Docker container
-5. Unlock the wallet
+5. Unlock the wallet**
 
 **Build the Docker image**
 
@@ -64,7 +62,7 @@ docker run --name stratis -d \
   stratis
 ~~~~
 
-*Unlock the wallet*
+**Unlock the wallet**
 
 ~~~~
 stratisd-unlockwallet
