@@ -12,14 +12,7 @@ services:
     ports:
       - '16174:16174'
     volumes:
-      - stratis:/var/lib/stratis
+      - /share/Container/stratis:/var/lib/stratis
     labels:
-      local.skynet.description: "stratisX"
+      local.skynet.description: "Stratis wallet"
       local.skynet.service: "stratis"
-
-volumes:
-  stratis:
-    driver: local
-    driver_opts:
-      device: /share/Container/stratis
-      o: bind

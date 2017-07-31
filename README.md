@@ -46,7 +46,7 @@ staking=1
 
 addnode=101.100.131.181
 addnode=103.24.76.21
-# add other nodes here...
+# add more nodes if you want...
 ```
 
 > Note: You should change the rpcpassword.
