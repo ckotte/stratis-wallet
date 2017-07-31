@@ -1,0 +1,8 @@
+stty -echo
+printf "Passphrase: "
+read WALLET_PASSPHRASE
+stty echo
+printf "\n"
+
+# unlock wallet for 31536000 seconds (one year)
+stratisd -datadir=$STRATIS_DATA_DIR walletpassphrase $WALLET_PASSPHRASE 31536000 true

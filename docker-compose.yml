@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  stratis:
+    restart: always
+    image: ckotte/stratis:2.0
+    build:
+        context: .
+        dockerfile: Dockerfile
+    container_name: stratis
+    hostname: stratis
+    ports:
+      - '16174:16174'
+    volumes:
+      - stratis:/var/lib/stratis
+    labels:
+      local.skynet.description: "stratisX"
+      local.skynet.service: "stratis"
+
+volumes:
+  stratis:
+    driver: local
+    driver_opts:
+      device: /share/Container/stratis
+      o: bind
