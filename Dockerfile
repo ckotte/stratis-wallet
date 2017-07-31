@@ -8,8 +8,7 @@ ARG CONTAINER_GID=1000
 # Setup useful environment variables
 ENV STRATIS_PACKAGE=stratisX
 ENV STRATIS_REPO=https://github.com/stratisproject/${STRATIS_PACKAGE}.git \
-    STRATIS_DATA_DIR=/var/lib/stratis \
-    STRATIS_RUN_DIR=/var/run/stratis
+    STRATIS_DATA_DIR=/var/lib/stratis
 
 COPY imagescripts/* /usr/bin/
 
@@ -48,7 +47,6 @@ RUN export CONTAINER_USER=stratis && \
     # Install stratisd to /usr/bin
     mv stratisd /usr/bin && \
     chmod +x /usr/bin/stratisd-* && \
-    mkdir -p $STRATIS_RUN_DIR && \
     mkdir -p $STRATIS_DATA_DIR && \
     # Clean caches and tmps
     rm -rf /var/cache/apk/* && \
@@ -58,5 +56,5 @@ RUN export CONTAINER_USER=stratis && \
 EXPOSE 16174
 
 USER stratis
-WORKDIR ${STRATIS_RUN_DIR}
+WORKDIR ${STRATIS_DATA_DIR}
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
