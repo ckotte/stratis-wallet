@@ -65,10 +65,19 @@ docker run --name stratis -d \
 **Unlock the wallet**
 
 ~~~~
+docker exec -it stratis bash
 stratisd-unlockwallet
 ~~~~
 
 > The wallet is now unlocked for stacking.
+
+**Get information about staking**
+
+~~~~
+docker exec stratisd-getstakinginfo
+~~~~
+
+> Note: Staking is working if "staking" is set to true.
 
 ## Credits
 
