@@ -1,1 +1,2 @@
+#!/bin/bash
 stratisd -datadir=$STRATIS_DATA_DIR getbalance
